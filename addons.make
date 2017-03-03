@@ -1,5 +1,6 @@
 ofxAssimpModelLoader
 ofxGui
 ofxOpenSteer
+ofxParticleEmitter
 ofxParticleSystemGPU
 ofxXmlSettings
