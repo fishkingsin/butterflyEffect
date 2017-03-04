@@ -1,4 +1,5 @@
 ofxAssimpModelLoader
+ofxGameCamera
 ofxGui
 ofxOpenSteer
 ofxParticleEmitter
