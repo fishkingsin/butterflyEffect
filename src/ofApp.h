@@ -3,9 +3,8 @@
 #include "ofMain.h"
 #include "ofxAssimpModelLoader.h"
 #include "ofxGui.h"
-#include "ofxOpenSteer.h"
 #include "ofxXmlSettings.h"
-#include "Flocking.h"
+
 #include "ofxGameCamera.h"
 #include "Butterfly.hpp"
 #include "ofxShadertoy.h"
