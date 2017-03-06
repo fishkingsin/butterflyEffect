@@ -2,6 +2,6 @@ ofxAssimpModelLoader
 ofxGameCamera
 ofxGui
 ofxOpenSteer
-ofxParticleEmitter
-ofxParticleSystemGPU
+ofxPostProcessing
+ofxShadertoy
 ofxXmlSettings

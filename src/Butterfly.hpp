@@ -10,16 +10,21 @@
 #define Butterfly_hpp
 #include "ofxAssimpModelLoader.h"
 #include <stdio.h>
-class Butterfly : public ofVec3f{
+class Butterfly {
 public:
     ~Butterfly();
     void setup();
     void update(ofCamera *cam);
     void draw();
     ofxAssimpModelLoader *model;
+    
     ofVec3f start,end,vel;
     ofVec3f getPosition();
     float _div,elapseTime,elapseTimeDiff;
+//    ofxParticleEmitter		m_emitter;
+    ofNode geometry,future;
     
+    
+    void set(float x, float y, float z);
 };
 #endif /* Butterfly_hpp */
