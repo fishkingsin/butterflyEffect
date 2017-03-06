@@ -2,6 +2,5 @@ ofxAssimpModelLoader
 ofxGameCamera
 ofxGui
 ofxOpenSteer
-ofxPostProcessing
 ofxShadertoy
 ofxXmlSettings
