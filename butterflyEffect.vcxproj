@@ -95,7 +95,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxAssimpModelLoader\libs;..\..\..\addons\ofxAssimpModelLoader\libs\assimp;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include\assimp;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\emscripten;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\Win32;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\x64;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\license;..\..\..\addons\ofxAssimpModelLoader\src;..\..\..\addons\ofxGameCamera\src;..\..\..\addons\ofxGui\src;..\..\..\addons\ofxOpenSteer\libs;..\..\..\addons\ofxOpenSteer\libs\opensteer;..\..\..\addons\ofxOpenSteer\libs\opensteer\include;..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer;..\..\..\addons\ofxOpenSteer\libs\opensteer\src;..\..\..\addons\ofxOpenSteer\src;..\..\..\addons\ofxShadertoy\src;..\..\..\addons\ofxXmlSettings\libs;..\..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxAssimpModelLoader\libs;..\..\..\addons\ofxAssimpModelLoader\libs\assimp;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include\assimp;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\emscripten;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\Win32;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\x64;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\license;..\..\..\addons\ofxAssimpModelLoader\src;..\..\..\addons\ofxGameCamera\src;..\..\..\addons\ofxGui\src;..\..\..\addons\ofxShadertoy\src;..\..\..\addons\ofxXmlSettings\libs;..\..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 		</ClCompile>
 		<Link>
@@ -114,7 +114,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxAssimpModelLoader\libs;..\..\..\addons\ofxAssimpModelLoader\libs\assimp;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include\assimp;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\emscripten;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\Win32;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\x64;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\license;..\..\..\addons\ofxAssimpModelLoader\src;..\..\..\addons\ofxGameCamera\src;..\..\..\addons\ofxGui\src;..\..\..\addons\ofxOpenSteer\libs;..\..\..\addons\ofxOpenSteer\libs\opensteer;..\..\..\addons\ofxOpenSteer\libs\opensteer\include;..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer;..\..\..\addons\ofxOpenSteer\libs\opensteer\src;..\..\..\addons\ofxOpenSteer\src;..\..\..\addons\ofxShadertoy\src;..\..\..\addons\ofxXmlSettings\libs;..\..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxAssimpModelLoader\libs;..\..\..\addons\ofxAssimpModelLoader\libs\assimp;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include\assimp;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\emscripten;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\Win32;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\x64;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\license;..\..\..\addons\ofxAssimpModelLoader\src;..\..\..\addons\ofxGameCamera\src;..\..\..\addons\ofxGui\src;..\..\..\addons\ofxShadertoy\src;..\..\..\addons\ofxXmlSettings\libs;..\..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<MultiProcessorCompilation>true</MultiProcessorCompilation>
 		</ClCompile>
@@ -133,7 +133,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxAssimpModelLoader\libs;..\..\..\addons\ofxAssimpModelLoader\libs\assimp;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include\assimp;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\emscripten;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\Win32;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\x64;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\license;..\..\..\addons\ofxAssimpModelLoader\src;..\..\..\addons\ofxGameCamera\src;..\..\..\addons\ofxGui\src;..\..\..\addons\ofxOpenSteer\libs;..\..\..\addons\ofxOpenSteer\libs\opensteer;..\..\..\addons\ofxOpenSteer\libs\opensteer\include;..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer;..\..\..\addons\ofxOpenSteer\libs\opensteer\src;..\..\..\addons\ofxOpenSteer\src;..\..\..\addons\ofxShadertoy\src;..\..\..\addons\ofxXmlSettings\libs;..\..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxAssimpModelLoader\libs;..\..\..\addons\ofxAssimpModelLoader\libs\assimp;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include\assimp;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\emscripten;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\Win32;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\x64;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\license;..\..\..\addons\ofxAssimpModelLoader\src;..\..\..\addons\ofxGameCamera\src;..\..\..\addons\ofxGui\src;..\..\..\addons\ofxShadertoy\src;..\..\..\addons\ofxXmlSettings\libs;..\..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<MultiProcessorCompilation>true</MultiProcessorCompilation>
 		</ClCompile>
@@ -155,7 +155,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxAssimpModelLoader\libs;..\..\..\addons\ofxAssimpModelLoader\libs\assimp;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include\assimp;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\emscripten;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\Win32;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\x64;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\license;..\..\..\addons\ofxAssimpModelLoader\src;..\..\..\addons\ofxGameCamera\src;..\..\..\addons\ofxGui\src;..\..\..\addons\ofxOpenSteer\libs;..\..\..\addons\ofxOpenSteer\libs\opensteer;..\..\..\addons\ofxOpenSteer\libs\opensteer\include;..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer;..\..\..\addons\ofxOpenSteer\libs\opensteer\src;..\..\..\addons\ofxOpenSteer\src;..\..\..\addons\ofxShadertoy\src;..\..\..\addons\ofxXmlSettings\libs;..\..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxAssimpModelLoader\libs;..\..\..\addons\ofxAssimpModelLoader\libs\assimp;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include\assimp;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\emscripten;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\Win32;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\x64;..\..\..\addons\ofxAssimpModelLoader\libs\assimp\license;..\..\..\addons\ofxAssimpModelLoader\src;..\..\..\addons\ofxGameCamera\src;..\..\..\addons\ofxGui\src;..\..\..\addons\ofxShadertoy\src;..\..\..\addons\ofxXmlSettings\libs;..\..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 		</ClCompile>
 		<Link>
@@ -188,28 +188,6 @@
 		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxSlider.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxSliderGroup.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxToggle.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\src\ofxOpenSteerPlugin.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\src\ofxOpenSteerVehicle.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\src\Camera.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\src\Clock.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\src\Color.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\src\Draw.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\src\lq.c" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\src\Obstacle.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\src\OldPathway.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\src\OpenSteerDemo.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\src\Path.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\src\Pathway.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\src\PlugIn.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\src\PolylineSegmentedPath.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\src\PolylineSegmentedPathwaySegmentRadii.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\src\PolylineSegmentedPathwaySingleRadius.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\src\SegmentedPath.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\src\SegmentedPathway.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\src\SimpleVehicle.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\src\TerrainRayTest.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\src\Vec3.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\src\Vec3Utilities.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxShadertoy\src\ofxShadertoy.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxXmlSettings\src\ofxXmlSettings.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxXmlSettings\libs\tinyxml.cpp" />
@@ -272,45 +250,6 @@
 		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxSlider.h" />
 		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxSliderGroup.h" />
 		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxToggle.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\src\ofxOpenSteer.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\src\ofxOpenSteerPlugin.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\src\ofxOpenSteerTypes.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\src\ofxOpenSteerUtils.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\src\ofxOpenSteerVehicle.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\AbstractVehicle.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\Annotation.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\Camera.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\Clock.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\Color.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\Draw.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\LocalSpace.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\lq.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\Obstacle.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\OldPathway.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\OpenSteerDemo.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\Path.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\Pathway.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\PlugIn.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\PolylineSegmentedPath.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\PolylineSegmentedPathwaySegmentRadii.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\PolylineSegmentedPathwaySingleRadius.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\Proximity.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\QueryPathAlike.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\QueryPathAlikeBaseDataExtractionPolicies.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\QueryPathAlikeMappings.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\QueryPathAlikeUtilities.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\SegmentedPath.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\SegmentedPathAlikeUtilities.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\SegmentedPathway.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\SharedPointer.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\SimpleVehicle.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\StandardTypes.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\SteerLibrary.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\UnusedParameter.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\Utilities.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\Vec3.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\include\OpenSteer\Vec3Utilities.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenSteer\libs\opensteer\src\TerrainRayTest.h" />
 		<ClInclude Include="..\..\..\addons\ofxShadertoy\src\ofxShadertoy.h" />
 		<ClInclude Include="..\..\..\addons\ofxXmlSettings\src\ofxXmlSettings.h" />
 		<ClInclude Include="..\..\..\addons\ofxXmlSettings\libs\tinyxml.h" />
