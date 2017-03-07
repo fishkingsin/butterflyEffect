@@ -67,6 +67,8 @@ class ofApp : public ofBaseApp{
     ofParameter<int> ageTarget;
     ofParameter<int> ageTargetVari;
     
+    ofParameter<ofVec2f> force;
+    
     ofFbo fbo;
     ofLight	light,light2,light3,light4;
     

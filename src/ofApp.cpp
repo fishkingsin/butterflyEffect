@@ -34,6 +34,7 @@ void ofApp::setup(){
     
     gui.add(ageTarget.set("ageTarget", 100,0,100));
     gui.add(ageTargetVari.set("ageTargetVari", 0,0,50));
+    gui.add(force.set("force", ofVec2f::zero(),ofVec2f::zero(),ofVec2f(-10,10)));
     
     
     gui.loadFromFile("settings.xml");
@@ -180,7 +181,7 @@ void ofApp::update(){
          i < butterflies.end();
          i++){
         Butterfly * b = *i;
-        b->update(&cam);
+        b->update(cam, force.get());
         age[current] = ageTarget + ofRandom(-ageTargetVari, ageTargetVari) ;
         billboards.getVertices()[current] = b->getPosition();
         billboardVels[current] = ofVec3f (ofRandom(-velx,velx),

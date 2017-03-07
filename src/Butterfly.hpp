@@ -14,7 +14,7 @@ class Butterfly {
 public:
     ~Butterfly();
     void setup();
-    void update(ofCamera *cam);
+    void update(const ofCamera &cam, const ofVec2f &force);
     void draw();
     ofxAssimpModelLoader *model;
     
@@ -26,5 +26,6 @@ public:
     
     
     void set(float x, float y, float z);
+    void resetPosition();
 };
 #endif /* Butterfly_hpp */
