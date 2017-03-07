@@ -14,29 +14,37 @@ void ofApp::setup(){
 //    ofEnableSeparateSpecularLight();
     
     gui.setup();
-    gui.add(noiseMode.set("noiseMode", 0,0,1));
-    gui.add(velx.set("velz", 0,0,50));
-    gui.add(vely.set("vely", 0,0,50));
-    gui.add(velz.set("velz", 0,0,50));
-    gui.add(velstrength.set("velstrength", 0,0,1));
-    gui.add(noiseStrength.set("noiseStrength", 0,0,5));
-    gui.add(color.set("color", 0,0,255));
-    gui.add(satuation.set("satuation", 0,0,255));
-    gui.add(bright.set("brightness", 0,0,255));
-    gui.add(colorVari.set("colorVari", 0,0,255));
-    gui.add(satuationVari.set("satuationVari", 0,0,255));
-    gui.add(brightVari.set("brightnessVari", 0,0,255));
-    gui.add(velsDecay.set("velsDecay", 0,0,1));
-    gui.add(velsDecayVari.set("velsDecayVari", 0,0,0.5));
+    gui.add(lightPos.set("lightPos", ofVec3f::zero(),ofVec3f(-ofGetWidth(), -ofGetHeight() , 0),ofVec3f(ofGetWidth(), ofGetHeight() , 2000 )));
+    particleParaGroup.setName("Particle");
     
-    gui.add(sizeTarget.set("sizeTarget", 100,10,200));
-    gui.add(sizeTargetVari.set("sizeTargetVari", 0,0,50));
+    particleParaGroup.add(noiseMode.set("noiseMode", 0,0,1));
+    particleParaGroup.add(velx.set("velx", 0,0,50));
+    particleParaGroup.add(vely.set("vely", 0,0,50));
+    particleParaGroup.add(velz.set("velz", 0,0,50));
+    particleParaGroup.add(velstrength.set("velstrength", 0,0,1));
+    particleParaGroup.add(noiseStrength.set("noiseStrength", 0,0,5));
+    particleParaGroup.add(color.set("color", 0,0,255));
+    particleParaGroup.add(satuation.set("satuation", 0,0,255));
+    particleParaGroup.add(bright.set("brightness", 0,0,255));
+    particleParaGroup.add(colorVari.set("colorVari", 0,0,255));
+    particleParaGroup.add(satuationVari.set("satuationVari", 0,0,255));
+    particleParaGroup.add(brightVari.set("brightnessVari", 0,0,255));
+    particleParaGroup.add(velsDecay.set("velsDecay", 0,0,1));
+    particleParaGroup.add(velsDecayVari.set("velsDecayVari", 0,0,0.5));
     
-    gui.add(ageTarget.set("ageTarget", 100,0,100));
-    gui.add(ageTargetVari.set("ageTargetVari", 0,0,50));
-    gui.add(force.set("force", ofVec2f::zero(),ofVec2f::zero(),ofVec2f(-10,10)));
+    particleParaGroup.add(sizeTarget.set("sizeTarget", 100,10,200));
+    particleParaGroup.add(sizeTargetVari.set("sizeTargetVari", 0,0,50));
     
+    particleParaGroup.add(ageTarget.set("ageTarget", 100,0,200));
+    particleParaGroup.add(ageTargetVari.set("ageTargetVari", 0,0,50));
+    particleParaGroup.add(ageDecay.set("ageDecay", 0,0,1));
+    gui.add(particleParaGroup);
     
+    butterflyParaGroup.setName("butterfly");
+    butterflyParaGroup.add(accTarget.set("acc",ofVec3f(1,1,1),ofVec3f(0,0,0),ofVec3f(100,100,100)));
+    butterflyParaGroup.add(force.set("force", ofVec2f::zero(),ofVec2f::zero(),ofVec2f(-10,10)));
+    butterflyParaGroup.add(bNoiseStrength.set("bNoiseStrength",1,0,10));
+    gui.add(butterflyParaGroup);
     gui.loadFromFile("settings.xml");
     
     for(int i = 0 ; i < 10 ; i++){
@@ -107,11 +115,11 @@ void ofApp::setup(){
     ofEnableAlphaBlending();
     
     fbo.allocate(ofGetWidth(), ofGetHeight());
-    light.setPosition(0, 0, 2000);
+    light.setPosition(0,0,2000);
     
-    light2.setPosition(-ofGetWidth()*0.5, 0, 2000);
-    light3.setPosition(ofGetWidth()*0.5, 0, 2000);
-    light4.setPosition(0, ofGetHeight()*0.5, 2000);
+//    light2.setPosition(-ofGetWidth()*0.5, 0, 2000);
+//    light3.setPosition(ofGetWidth()*0.5, 0, 2000);
+//    light4.setPosition(0, ofGetHeight()*0.5, 2000);
 }
 float minNoise = 0.499;
 float maxNoise = 0.501;
@@ -147,12 +155,12 @@ void ofApp::update(){
         billboardVels[i] += vec ;
         billboards.getVertices()[i] += billboardVels[i];
         billboardVels[i] *= billboardVelsDecay[i];
-        billboards.setNormal(i,ofVec3f((age[i]/100.0f)*billboardSizeTarget[i],0,0));
+        billboards.setNormal(i,ofVec3f((age[i]/ageTarget)*billboardSizeTarget[i],0,0));
         
         ofColor c = billboards.getColors()[i];
         c.setBrightness(255*(age[i]/100.0f));
         billboards.getColors()[i].set(c);
-        age[i] *= 0.99;
+        age[i] *= ageDecay;
     }
     
     //    flocking.update(ofGetElapsedTimef(), 0.06);
@@ -182,6 +190,8 @@ void ofApp::update(){
          i++){
         Butterfly * b = *i;
         b->update(cam, force.get());
+        b->acc = accTarget.get();
+        b->noiseStrength = bNoiseStrength;
         age[current] = ageTarget + ofRandom(-ageTargetVari, ageTargetVari) ;
         billboards.getVertices()[current] = b->getPosition();
         billboardVels[current] = ofVec3f (ofRandom(-velx,velx),
@@ -201,7 +211,7 @@ void ofApp::update(){
         current%=NUM_BILLBOARDS;
         
     }
-    
+    light2.setPosition(lightPos);
 }
 
 //--------------------------------------------------------------
@@ -216,14 +226,15 @@ void ofApp::draw(){
     glPushAttrib(GL_ENABLE_BIT);
     light.enable();
     light2.enable();
-    light3.enable();
-    light4.enable();
+//    light3.enable();
+//    light4.enable();
     ofEnableSeparateSpecularLight();
     
     cam.begin();
     
 
     ofDrawGrid(100, ofGetWidth()/100, true, true, true, true);
+    ofDrawArrow( light2.getPosition() ,  light2.getPosition()+light2.getLookAtDir() , 10);
     ofEnableBlendMode(OF_BLENDMODE_ADD);
     
     ofPushMatrix();

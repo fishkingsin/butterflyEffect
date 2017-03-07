@@ -28,9 +28,9 @@ void Butterfly::update(const ofCamera &cam, const ofVec2f &force){
 
     ofVec3f vec = ofVec3f (ofSignedNoise(t,geometry.getY()/div, geometry.getZ()/div),
                            ofSignedNoise(geometry.getX()/div, t, geometry.getZ()/div),
-                           0)+(force);
+                           0)*noiseStrength+(force);
     
-    vec *= 10 * ofGetLastFrameTime();
+    vec *= acc * ofGetLastFrameTime();
     vec.z = 0;
     vel+=vec;
     

@@ -19,13 +19,15 @@ public:
     ofxAssimpModelLoader *model;
     
     ofVec3f start,end,vel;
+    ofVec3f acc;
     ofVec3f getPosition();
-    float _div,elapseTime,elapseTimeDiff;
+    float _div,elapseTime,elapseTimeDiff,noiseStrength;
 //    ofxParticleEmitter		m_emitter;
     ofNode geometry,future;
     
     
     void set(float x, float y, float z);
     void resetPosition();
+    
 };
 #endif /* Butterfly_hpp */

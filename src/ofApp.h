@@ -45,6 +45,8 @@ class ofApp : public ofBaseApp{
 //    vector<Butterfly*>::iterator it;
     vector<Butterfly*> butterflies;
     ofxPanel gui;
+    
+    ofParameterGroup particleParaGroup;
     ofParameter<float> velx;
     ofParameter<float> vely;
     ofParameter<float> velz;
@@ -64,13 +66,17 @@ class ofApp : public ofBaseApp{
     ofParameter<float> sizeTarget;
     ofParameter<float> sizeTargetVari;
     
+    
     ofParameter<int> ageTarget;
     ofParameter<int> ageTargetVari;
-    
+    ofParameter<float> ageDecay;
+    ofParameter<ofVec3f> lightPos;
     ofParameter<ofVec2f> force;
-    
+    ofParameter<ofVec3f> accTarget;
+    ofParameter<float> bNoiseStrength;
+    ofParameterGroup butterflyParaGroup;
     ofFbo fbo;
-    ofLight	light,light2,light3,light4;
+    ofLight	light,light2;//,light3,light4;
     
     ofxShadertoy shadertoy;
 
