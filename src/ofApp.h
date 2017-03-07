@@ -68,16 +68,26 @@ class ofApp : public ofBaseApp{
     
     
     ofParameter<int> ageTarget;
+    
     ofParameter<int> ageTargetVari;
     ofParameter<float> ageDecay;
     ofParameter<ofVec3f> lightPos;
     ofParameter<ofVec2f> force;
     ofParameter<ofVec3f> accTarget;
     ofParameter<float> bNoiseStrength;
+    ofParameter<float>radiusTarget;
+    ofParameter<float>radiusTargetVari;
+    ofParameter<float>velDecay;
+    ofParameter<float>bSize;
+    ofParameter<float>bSzieVair;
+    ofParameter<bool>bFollow;
+    ofxButton emmit;
     ofParameterGroup butterflyParaGroup;
     ofFbo fbo;
     ofLight	light,light2;//,light3,light4;
-    
+    ofParameter<ofVec3f> mousePoint;
     ofxShadertoy shadertoy;
-
+    
+    void emmitButterfly();
+    
 };

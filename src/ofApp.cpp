@@ -13,8 +13,11 @@ void ofApp::setup(){
     shadertoy.load("shaders/Glow.frag");
 //    ofEnableSeparateSpecularLight();
     
+    cam.setVFlip(true);
     gui.setup();
     gui.add(lightPos.set("lightPos", ofVec3f::zero(),ofVec3f(-ofGetWidth(), -ofGetHeight() , 0),ofVec3f(ofGetWidth(), ofGetHeight() , 2000 )));
+    gui.add(emmit.setup("emmitButterfly"));
+    emmit.addListener(this, &ofApp::emmitButterfly);
     particleParaGroup.setName("Particle");
     
     particleParaGroup.add(noiseMode.set("noiseMode", 0,0,1));
@@ -38,16 +41,24 @@ void ofApp::setup(){
     particleParaGroup.add(ageTarget.set("ageTarget", 100,0,200));
     particleParaGroup.add(ageTargetVari.set("ageTargetVari", 0,0,50));
     particleParaGroup.add(ageDecay.set("ageDecay", 0,0,1));
+    
     gui.add(particleParaGroup);
     
     butterflyParaGroup.setName("butterfly");
+    butterflyParaGroup.add(bFollow.set("bFollow",false));
+    butterflyParaGroup.add(mousePoint.set("attractPoint",ofVec3f(1,1,1),ofVec3f(-ofGetWidth(), -ofGetHeight() ,0),ofVec3f(ofGetWidth(), ofGetHeight() ,0)));
     butterflyParaGroup.add(accTarget.set("acc",ofVec3f(1,1,1),ofVec3f(0,0,0),ofVec3f(100,100,100)));
     butterflyParaGroup.add(force.set("force", ofVec2f::zero(),ofVec2f::zero(),ofVec2f(-10,10)));
     butterflyParaGroup.add(bNoiseStrength.set("bNoiseStrength",1,0,10));
+    butterflyParaGroup.add(radiusTarget.set("radiusTarget",0,0,400));
+    butterflyParaGroup.add(radiusTargetVari.set("radiusTargetVari",1,0,400));
+    butterflyParaGroup.add(velDecay.set("velDecay",0.9,0,1));
+    butterflyParaGroup.add(bSize.set("bSize",0.9,0,1));
+    butterflyParaGroup.add(bSzieVair.set("bSzieVair",0.9,0,1));
     gui.add(butterflyParaGroup);
     gui.loadFromFile("settings.xml");
     
-    for(int i = 0 ; i < 10 ; i++){
+    for(int i = 0 ; i < 50 ; i++){
         Butterfly *butterfly = new Butterfly();
         ofxAssimpModelLoader *model = new ofxAssimpModelLoader();
         float r = ofRandom(1,2);
@@ -63,7 +74,8 @@ void ofApp::setup(){
         model->setScale(MODEL_SCALE + szieVari, MODEL_SCALE + szieVari, MODEL_SCALE + szieVari);
         butterfly->model = model;
         butterfly->setup();
-        butterfly->set(-ofGetWidth()*0.5+ofRandom(ofGetWidth()),-ofGetHeight()*0.5+ofRandom(ofGetHeight()),1);
+        butterfly->targetScale = bSize + ofRandom(-bSzieVair,bSzieVair);
+        butterfly->resetPosition();
         butterflies.push_back(butterfly);
     }
     
@@ -120,6 +132,18 @@ void ofApp::setup(){
 //    light2.setPosition(-ofGetWidth()*0.5, 0, 2000);
 //    light3.setPosition(ofGetWidth()*0.5, 0, 2000);
 //    light4.setPosition(0, ofGetHeight()*0.5, 2000);
+}
+
+void ofApp::emmitButterfly(){
+    for (vector<Butterfly*>::iterator i = butterflies.begin();
+         i < butterflies.end();
+         i++){
+        Butterfly * b = *i;
+        b->resetPosition(1);
+    }
+    for (int i=0; i<NUM_BILLBOARDS; i++) {
+        age[i] = 0;
+    }
 }
 float minNoise = 0.499;
 float maxNoise = 0.501;
@@ -185,30 +209,37 @@ void ofApp::update(){
     //
     //    }
     
+    
     for (vector<Butterfly*>::iterator i = butterflies.begin();
          i < butterflies.end();
          i++){
         Butterfly * b = *i;
-        b->update(cam, force.get());
+        b->update(cam, force.get() , mousePoint.get() , bFollow);
         b->acc = accTarget.get();
+        b->velDecay = velDecay;
+        b->radius = radiusTarget - ofRandom(0,radiusTargetVari);
         b->noiseStrength = bNoiseStrength;
-        age[current] = ageTarget + ofRandom(-ageTargetVari, ageTargetVari) ;
-        billboards.getVertices()[current] = b->getPosition();
-        billboardVels[current] = ofVec3f (ofRandom(-velx,velx),
-                                          ofRandom(-vely,vely),
-                                          ofRandom(-velz,velz))*velstrength
-        + ofVec3f (ofSignedNoise(t, billboards.getVertex(current).y, billboards.getVertex(current).z),
-                   ofSignedNoise(billboards.getVertex(current).x, t, billboards.getVertex(current).z),
-                   ofSignedNoise(billboards.getVertex(current).x, billboards.getVertex(current).y, t))*noiseStrength;
-        float brightness = ofRandom(160, 255);
-        billboards.getColors()[current].set(ofColor::fromHsb(color+ofRandom(-colorVari,colorVari),
-                                                       satuation+ofRandom(-satuationVari,satuationVari),
-                                                       bright+ofRandom(-brightVari,brightVari)
-                                                       ));
-        billboardVelsDecay[current] = velsDecay+ofRandom(-velsDecayVari,velsDecayVari);
-        billboardSizeTarget[current] = sizeTarget + +ofRandom(-sizeTargetVari,sizeTargetVari);
-        current++;
-        current%=NUM_BILLBOARDS;
+        b->targetScale = bSize + ofRandom(-bSzieVair,bSzieVair);
+        if(b->age > 0){
+            age[current] = ageTarget + ofRandom(-ageTargetVari, ageTargetVari) ;
+            billboards.getVertices()[current] = b->getPosition();
+            billboardVels[current] = ofVec3f (ofRandom(-velx,velx),
+                                              ofRandom(-vely,vely),
+                                              ofRandom(-velz,velz))*velstrength
+            + ofVec3f (ofSignedNoise(t, billboards.getVertex(current).y, billboards.getVertex(current).z),
+                       ofSignedNoise(billboards.getVertex(current).x, t, billboards.getVertex(current).z),
+                       ofSignedNoise(billboards.getVertex(current).x, billboards.getVertex(current).y, t))*noiseStrength;
+            float brightness = ofRandom(160, 255);
+            billboards.getColors()[current].set(ofColor::fromHsb(color+ofRandom(-colorVari,colorVari),
+                                                                 satuation+ofRandom(-satuationVari,satuationVari),
+                                                                 bright+ofRandom(-brightVari,brightVari)
+                                                                 ));
+            billboardVelsDecay[current] = velsDecay+ofRandom(-velsDecayVari,velsDecayVari);
+            billboardSizeTarget[current] = sizeTarget + +ofRandom(-sizeTargetVari,sizeTargetVari);
+            
+            current++;
+            current%=NUM_BILLBOARDS;
+        }
         
     }
     light2.setPosition(lightPos);
@@ -235,6 +266,13 @@ void ofApp::draw(){
 
     ofDrawGrid(100, ofGetWidth()/100, true, true, true, true);
     ofDrawArrow( light2.getPosition() ,  light2.getPosition()+light2.getLookAtDir() , 10);
+    ofPushStyle();
+    ofNoFill();
+    ofSetColor(255,0,0);
+    ofDrawCircle(0, 0, radiusTarget);
+    ofSetColor(0,255,0);
+    ofDrawCircle(0, 0, radiusTarget-radiusTargetVari);
+    ofPopStyle();
     ofEnableBlendMode(OF_BLENDMODE_ADD);
     
     ofPushMatrix();
@@ -265,7 +303,10 @@ void ofApp::draw(){
         Butterfly * b = *i;
         b->draw();
     }
-
+    ofPushStyle();
+    ofSetColor(ofColor::cyan);
+    ofDrawArrow(mousePoint, mousePoint,10);
+    ofPopStyle();
     cam.end();
 #ifndef TARGET_PROGRAMMABLE_GL
     glEnable(GL_NORMALIZE);
@@ -275,6 +316,7 @@ void ofApp::draw(){
     ofDisableLighting();
     ofDisableSeparateSpecularLight();
     fbo.end();
+    
 //    fbo.draw(0,0);
     shadertoy.setTexture(0, fbo.getTexture());
     shadertoy.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());

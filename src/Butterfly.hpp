@@ -14,20 +14,22 @@ class Butterfly {
 public:
     ~Butterfly();
     void setup();
-    void update(const ofCamera &cam, const ofVec2f &force);
+    void update(const ofCamera &cam, const ofVec2f &force,const ofVec3f &attractPoint, bool bfollow);
     void draw();
     ofxAssimpModelLoader *model;
     
     ofVec3f start,end,vel;
     ofVec3f acc;
     ofVec3f getPosition();
-    float _div,elapseTime,elapseTimeDiff,noiseStrength;
+    float _div,elapseTime,elapseTimeDiff,noiseStrength,radius,velDecay,targetScale,delayEmmit;
+    int age;
 //    ofxParticleEmitter		m_emitter;
     ofNode geometry,future;
     
     
     void set(float x, float y, float z);
-    void resetPosition();
+    void resetPosition(float delay = 3, float x = 0 , float y = 0);
+    
     
 };
 #endif /* Butterfly_hpp */
